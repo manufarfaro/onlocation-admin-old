@@ -18,6 +18,7 @@ grails.mime.types = [
     all:           '*/*',
     atom:          'application/atom+xml',
     css:           'text/css',
+	less:           'stylesheet/less',
     csv:           'text/csv',
     form:          'application/x-www-form-urlencoded',
     html:          ['text/html','application/xhtml+xml'],
@@ -67,7 +68,7 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-		grails.serverURL = 'http://www.onlocation.com.ar/'
+		grails.serverURL = 'http://www.onlocationapp.com.ar/'
     }
 }
 
