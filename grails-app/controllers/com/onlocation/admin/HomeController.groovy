@@ -2,7 +2,9 @@ package com.onlocation.admin
 
 class HomeController {
 
+	static namespace = 'admin'
+	
     def index() {
-		render('hello world!')
+		render (view: '/admin/home/index', model: [])
 	}
 }

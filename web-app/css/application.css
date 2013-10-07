@@ -6774,3 +6774,58 @@ a .icon-flip-vertical:before {
   content: "\f18b";
 }
 /* OnLocation - 2013 */
+/* Tags */
+body {
+  padding-top: 70px;
+}
+/* Custom Classes */
+.container-fluid {
+  background-color: #428BCA;
+}
+.ol-nav {
+  background-color: #428BCA;
+  border-color: #A9E2F3;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+.ol-nav a {
+  color: #eeeeee;
+}
+.ol-nav li a:hover,
+.ol-nav li a:focus,
+.ol-nav li a:active {
+  background-color: #045FB4;
+}
+.ol-nav .open > a,
+.ol-nav .open > a:hover,
+.ol-nav .open > a:focus {
+  background-color: #045FB4;
+}
+.ol-sublist {
+  margin-left: 10px;
+}
+.ol-container-company-name {
+  padding-left: 0px;
+}
+.ol-company-name {
+  font-weight: bolder;
+  color: #999;
+}
+.ol-layout-username {
+  margin: 0px auto;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: bolder;
+}
+/* Bootstrap Override */
+.navbar-brand {
+  font-weight: bolder;
+  color: #eee;
+}
+.navbar-toggle {
+  padding: 0;
+  margin-top: 10px;
+}
+.dropdown-toggle:hover {
+  background-color: #045FB4;
+}

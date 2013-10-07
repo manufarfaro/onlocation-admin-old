@@ -36,6 +36,14 @@ grails.mime.types = [
 // What URL patterns should be processed by the resources plugin
 grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
 
+grails.resources.mappers.yuicssminify.includes = ['**/*.css']
+grails.resources.mappers.yuijsminify.includes = ['**/*.js']
+grails.resources.mappers.yuicssminify.excludes = ['**/*.less']
+grails.resources.mappers.yuijsminify.excludes = ['**/*.min.js']
+
+grails.resources.mappers.yuicssminify.disable=true
+grails.resources.mappers.yuijsminify.disable=false
+
 // The default codec used to encode data with ${}
 grails.views.default.codec = "none" // none, html, base64
 grails.views.gsp.encoding = "UTF-8"

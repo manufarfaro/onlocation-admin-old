@@ -1,3 +1,68 @@
 /* OnLocation - 2013 */
 
+/* Tags */
+body{
+	padding-top: @navbar-body-margin-top;
+}
 
+/* Custom Classes */
+.container-fluid{
+	background-color: #428BCA;
+}
+.ol-nav{
+	background-color: #428BCA;
+	border-color: #A9E2F3;
+	.box-shadow(@nav-shadow);
+	
+	a {
+		color: #eeeeee;
+	}
+	li {
+		a{
+			&:hover,
+	    	&:focus,
+	    	&:active{
+				background-color: #045FB4;
+			}
+		}
+	}
+	.open > a {
+	    &,
+	    &:hover,
+	    &:focus {
+	      background-color: #045FB4;
+	    }
+  	}
+}
+.ol-sublist{
+	margin-left: 10px;
+}
+.ol-container-company-name{
+	padding-left:0px;
+}
+.ol-company-name{
+	font-weight: bolder;
+	color: #999;
+}
+.ol-layout-username{
+	margin: 0px auto;
+	font-size: 16px;
+	line-height: 16px;
+	font-weight: bolder;
+	
+}
+
+/* Bootstrap Override */
+.navbar-brand{
+	font-weight: bolder;
+	color: #eee;
+}
+
+.navbar-toggle{
+	padding: 0;
+	margin-top:10px;
+}
+
+.dropdown-toggle:hover{
+		background-color: #045FB4;
+}

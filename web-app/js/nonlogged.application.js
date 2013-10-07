@@ -1,5 +1,5 @@
 /* OnLocation - 2013 */
 
-$(document).ready(function(){
+$('document').ready(function(){
 	
 })

@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="layout" content="index.nonauthenticated"/>
 <title>Inicio</title>
+</head>
+<body>
 <script type="text/javascript">
-	$(document).ready(function(){
+	$('document').ready(function(){
 		/*Start : Automatically start the slider */
 		$('#olw-carousel').carousel({
 		  interval: 4000
 		});
 	})
 </script>
-</head>
-<body>
 
     <!-- Start: MAIN CONTENT -->
     <div class="content">

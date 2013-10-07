@@ -13,10 +13,12 @@
 		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
 		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
 		<r:require module="jquery"/>
-		<r:require modules="bootstrapjs, nonlogged"/>
-
+		<r:require module="bootstrapjs"/>
+		<r:require module="nonlogged"/>	
+		<g:layoutHead/>
+		<r:layoutResources />
 		<script type="text/javascript">
-			$(document).ready(function() {
+			$('document').ready(function() {
 				//
 				// Events
 				/*Start: Prevent the default white background on blur of top navigation */
@@ -38,9 +40,6 @@
 			
 			});
 		</script>
-
-		<g:layoutHead/>
-		<r:layoutResources />
 	</head>
 	<body>
 		<!-- Start: Modals -->
@@ -48,13 +47,13 @@
 		<g:render template="/index/index/register" model="[]"></g:render>
 		<!-- End: Modals -->
 		<!-- Start: HEADER -->
-  
+
 	    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
 	      <!-- Start: Navigation wrapper -->
 	      <div id="olw-header" class="navbar">
 	          <div class="container">
 		          <div class="navbar-header">
-		            <a href="/" class="brand navbar-brand brand-bootbus">
+		            <a href="/" class="navbar-brand">
 		            	OnLocation
 		            </a>
 		            <!-- Below button used for responsive navigation -->
@@ -63,13 +62,13 @@
 		            </a>
 		          </div>
 		          <!-- Start: Primary navigation -->
-		            <nav role="navigation" class="navbar-collapse nav-collapse collapse pull-right" style="height: 1px;">
+		            <nav role="navigation" class="navbar-collapse nav-collapse collapse navbar-right" style="height: 1px;">
 		              <ul class="nav navbar-nav">
 		                <li class="dropdown">
 			              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 			              	&iquest;Sos una Empresa? <b class="caret"></b>
 			              </a>
-			              <ul class="dropdown-menu" style="width:205px;">
+			              <ul class="dropdown-menu" style="min-width:205px;">
 			                <li >
 			                	<a data-toggle="modal" href="#olm-login">
 			                		<i class="icon-star"></i> Ingres&aacute;
