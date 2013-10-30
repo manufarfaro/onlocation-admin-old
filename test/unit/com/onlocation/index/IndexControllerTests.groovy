@@ -8,13 +8,11 @@ import org.junit.*
  */
 @TestFor(IndexController)
 class IndexControllerTests{
-	
-	IndexController controller = new IndexController()
-	
-    void testIndexMapping() {
+    void testIndexIsRenderingOkAndReturnsCorrectView() {
 		
        controller.index()
 	   
-	   assertForwardUrlMapping("/",action: "index")
+	   assert controller.response.status == 200
+	   assert view == '/index/index/index'
     }
 }

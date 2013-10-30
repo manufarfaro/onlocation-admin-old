@@ -11,7 +11,10 @@ import org.junit.*
 @TestFor(HomeController)
 class HomeControllerTests {
 
-    void testSomething() {
-       fail "Implement me"
+    void testHomeIsRenderingOkAndReturnsCorrectView() {
+       controller.index()
+	   
+	   assert controller.response.status == 200
+	   assert view == '/admin/home/index'
     }
 }

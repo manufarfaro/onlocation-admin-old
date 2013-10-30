@@ -1,9 +1,12 @@
 package com.onlocation
 
 import static org.junit.Assert.*
+import grails.test.GrailsUrlMappingsTestCase;
+
 import org.junit.*
 
-class UrlMappingTests {
+/* Testeo que los mapeos customizados se esten resolviendo hacia los controllers que defini. */
+class UrlMappingTests extends GrailsUrlMappingsTestCase {
 
     @Before
     void setUp() {
