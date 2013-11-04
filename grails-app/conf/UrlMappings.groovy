@@ -1,24 +1,17 @@
 class UrlMappings {
 
 	static mappings = {
+		"/admin"(
+			controller:'redirect',
+			action: 'adminHomeIndex',
+		)
+		"/$namespace/$controller/$action?/$id?"()
 		'/'(
 			controller:'Index',
 			action:'index',
 			namespace:null
 		)
-		"/$namespace/$controller/$action?/$id?"()
-		'/admin'(
-			redirect: [
-			           controller:'Home',	
-			           action:'index',
-			           namespace:'admin'
-			]
-		)
-		'500'(
-			view:'/error'
-		)
-		'404'(
-			"Pagina No Encontrada"
-		)
+		'500'(view:'/error')
+		'404'("Pagina No Encontrada")
 	}
 }
