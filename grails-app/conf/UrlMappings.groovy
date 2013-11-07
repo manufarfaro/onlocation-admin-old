@@ -1,12 +1,12 @@
 class UrlMappings {
 
 	static mappings = {
-		"/admin"(
+		name admin: "/admin"(
 			controller:'redirect',
 			action: 'adminHomeIndex',
 		)
 		"/$namespace/$controller/$action?/$id?"()
-		'/'(
+		name home:'/'(
 			controller:'Index',
 			action:'index',
 			namespace:null
