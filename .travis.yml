@@ -2,4 +2,10 @@ language: groovy
 branches:
   only:
     - master
-script: ./grailsw test test-app
+before_install:
+ - sudo add-apt-repository -y ppa:groovy-dev/grails
+ - sudo apt-get update
+ - sudo apt-get -y install grails-ppa
+ - sudo apt-get install grails 2.1.0
+
+script: grails test-app
