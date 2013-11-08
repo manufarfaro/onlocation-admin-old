@@ -8,4 +8,4 @@ before_install:
  - sudo apt-get -y install grails-ppa
  - sudo apt-get install grails 2.2.0
 
-script: grails test-app
+script: grails test refresh-dependencies && grails test test-app
