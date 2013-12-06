@@ -1,0 +1,179 @@
+import com.onlocation.auth.*
+
+
+fixture{
+	/*
+	 * Users
+	 */
+	// Municipality
+	userMoron(
+		GUser,
+		username: 'admin.moron@onlocation.com.ar',
+		password: 'ghiforever',
+		enabled: true
+	)
+	// Companies
+	userAsakura(
+		GUser,
+		username: 'admin.asakura@onlocation.com.ar',
+		password: 'asakura',
+		enabled: true
+	)
+	userOyamada(
+		GUser,
+		username: 'admin.oyamada@onlocation.com.ar',
+		password: 'oyamada',
+		enabled: true
+	)
+	// Offices
+	userAsakuraCentro(
+		GUser,
+		username: 'centro.asakura@onlocation.com.ar',
+		password: 'asakura',
+		enabled: true
+	)
+	userAsakuraHurlingham(
+		GUser,
+		username: 'hurlingham.asakura@onlocation.com.ar',
+		password: 'asakura',
+		enabled: true
+	)
+	userAsakuraCastelar(
+		GUser,
+		username: 'castelar.asakura@onlocation.com.ar',
+		password: 'asakura',
+		enabled: true
+	)
+	userOyamadaCentro(
+		GUser,
+		username: 'centro.oyamada@onlocation.com.ar',
+		password: 'oyamada',
+		enabled: true
+	)
+	userOyamadaVillaTesei(
+		GUser,
+		username: 'vtesei.oyamada@onlocation.com.ar',
+		password: 'oyamada',
+		enabled: true
+	)
+	userOyamadaHaedo(
+		GUser,
+		username: 'haedo.oyamada@onlocation.com.ar',
+		password: 'oyamada',
+		enabled: true
+	)
+	// Clients
+	userYoh(
+		GUser,
+		username: 'yoh@asakura.com',
+		password: '123456',
+		enabled: true
+	)
+	userHao(
+		GUser,
+		username: 'hao@asakura.com',
+		password: '123456',
+		enabled: true
+	)
+	userManta(
+		GUser,
+		username: 'manta@oyamada.com',
+		password: '123456',
+		enabled: true
+	)
+	userAnna(
+		GUser,
+		username: 'anna@kyoyama.com',
+		password: '123456',
+		enabled: true
+	)
+	
+	/*
+	 * Roles
+	 */
+	roleMunicipality(
+		GRole,
+		authority: 'ROLE_MUNICIPALITY'
+	)
+	roleCompany(
+		GRole,
+		authority: 'ROLE_COMPANY'
+	)
+	roleOffice(
+		GRole,
+		authority: 'ROLE_OFFICE'
+	)
+	roleClient(
+		GRole,
+		authority: 'ROLE_CLIENT'
+	)
+	/*
+	 * UserRoles
+	 */
+	userRole1a(
+		GUserGRole,
+		GUser: userMoron,
+		GRole: roleMunicipality
+	)
+	userRole2a(
+		GUserGRole,
+		GUser: userAsakura,
+		GRole: roleCompany
+	)
+	userRole2b(
+		GUserGRole,
+		GUser: userOyamada,
+		GRole: roleCompany
+	)
+	userRole3a(
+		GUserGRole,
+		GUser: userAsakuraCentro,
+		GRole: roleOffice
+	)
+	userRole3b(
+		GUserGRole,
+		GUser: userAsakuraHurlingham,
+		GRole: roleOffice
+	)
+	userRole3c(
+		GUserGRole,
+		GUser: userAsakuraCastelar,
+		GRole: roleOffice
+	)
+	userRole3d(
+		GUserGRole,
+		GUser: userOyamadaCentro,
+		GRole: roleOffice
+	)
+	userRole3e(
+		GUserGRole,
+		GUser: userOyamadaVillaTesei,
+		GRole: roleOffice
+	)
+	userRole3f(
+		GUserGRole,
+		GUser: userOyamadaHaedo,
+		GRole: roleOffice
+	)
+	userRole4a(
+		GUserGRole,
+		GUser: userYoh,
+		GRole: roleClient
+	)
+	userRole4b(
+		GUserGRole,
+		GUser: userHao,
+		GRole: roleClient
+	)
+	userRole4c(
+		GUserGRole,
+		GUser: userManta,
+		GRole: roleClient
+	)
+	userRole4d(
+		GUserGRole,
+		GUser: userAnna,
+		GRole: roleClient
+	)
+	
+}

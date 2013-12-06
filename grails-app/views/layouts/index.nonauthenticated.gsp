@@ -14,7 +14,8 @@
 		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
 		<r:require module="jquery"/>
 		<r:require module="bootstrapjs"/>
-		<r:require module="nonlogged"/>	
+		<r:require module="nonlogged"/>
+		<r:require module="formLiveValidator"/>		
 		<g:layoutHead/>
 		<r:layoutResources />
 		<script type="text/javascript">
@@ -64,25 +65,39 @@
 		          <!-- Start: Primary navigation -->
 		            <nav role="navigation" class="navbar-collapse nav-collapse collapse navbar-right" style="height: 1px;">
 		              <ul class="nav navbar-nav">
-		                <li class="dropdown">
-			              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-			              	&iquest;Sos una Empresa? <b class="caret"></b>
-			              </a>
-			              <ul class="dropdown-menu" style="min-width:205px;">
-			                <li >
-			                	<a data-toggle="modal" href="#olm-login">
-			                		<i class="icon-star"></i> Ingres&aacute;
-			                	</a>
-			                </li>
-			                <li class="divider"></li>
-			                <li>
-			                	<a data-toggle="modal" href="#olm-register">
-			                		<i class="icon-heart"></i> &iexcl;Registrate!
-			                	</a>
-			                </li>
-			              </ul>
-			            </li>
-		              </ul>
+						<sec:ifLoggedIn>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<sec:username/> <b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu" style="min-width:193px;">
+				                <li>
+				                	<g:link action="logout">Logout</g:link>
+				                </li>
+				            </ul>
+						</li>
+						</sec:ifLoggedIn>
+						<sec:ifNotLoggedIn>
+			                <li class="dropdown">
+				              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				              	&iquest;Sos una Empresa? <b class="caret"></b>
+				              </a>
+				              <ul class="dropdown-menu" style="min-width:205px;">
+				                <li >
+				                	<a data-toggle="modal" href="#olm-login">
+				                		<i class="icon-star"></i> Ingres&aacute;
+				                	</a>
+				                </li>
+				                <li class="divider"></li>
+				                <li>
+				                	<a data-toggle="modal" href="#olm-register">
+				                		<i class="icon-heart"></i> &iexcl;Registrate!
+				                	</a>
+				                </li>
+				              </ul>
+				            </li>
+						</sec:ifNotLoggedIn>
+			          </ul>
 		            </nav>
 	            </div>  
 	      </div>

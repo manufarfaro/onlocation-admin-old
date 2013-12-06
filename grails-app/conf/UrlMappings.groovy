@@ -5,6 +5,16 @@ class UrlMappings {
 			controller:'redirect',
 			action: 'adminHomeIndex',
 		)
+		name login: "/login"(
+			controller:'Index',
+			action:'login',
+			namespace:null
+		)
+		name logout: "/logout"(
+			controller:'Index',
+			action:'logout',
+			namespace:null
+		)
 		"/$namespace/$controller/$action?/$id?"()
 		name home:'/'(
 			controller:'Index',

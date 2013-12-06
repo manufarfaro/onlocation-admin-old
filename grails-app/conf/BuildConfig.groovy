@@ -38,8 +38,9 @@ grails.project.dependency.resolution = {
 				// uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
 				//mavenRepo "http://snapshots.repository.codehaus.org"
 				//mavenRepo "http://repository.codehaus.org"
-				//mavenRepo "http://download.java.net/maven/2/"
+				mavenRepo "http://download.java.net/maven/2/"
 				//mavenRepo "http://repository.jboss.com/maven2/"
+				mavenRepo 'http://repo.spring.io/milestone'
 			}
 
 			dependencies { // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
@@ -54,6 +55,8 @@ grails.project.dependency.resolution = {
 
 				runtime ":database-migration:1.3.2"
 
+				compile ':spring-security-core:2.0-RC2'
+				compile ":fixtures:1.2"
 				compile ':cache:1.0.1'
 
 				test ":code-coverage:1.2.6"
@@ -82,8 +85,9 @@ grails.project.dependency.resolution = {
 				// uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
 				//mavenRepo "http://snapshots.repository.codehaus.org"
 				//mavenRepo "http://repository.codehaus.org"
-				//mavenRepo "http://download.java.net/maven/2/"
+				mavenRepo "http://download.java.net/maven/2/"
 				//mavenRepo "http://repository.jboss.com/maven2/"
+				mavenRepo 'http://repo.spring.io/milestone'
 			}
 
 			dependencies { // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
@@ -98,6 +102,8 @@ grails.project.dependency.resolution = {
 
 				runtime ":database-migration:1.3.2"
 
+				compile ':spring-security-core:2.0-RC2'
+				compile ":fixtures:1.2"
 				compile ':cache:1.0.1'
 
 				test ":code-coverage:1.2.6"
@@ -127,8 +133,9 @@ grails.project.dependency.resolution = {
 				// uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
 				//mavenRepo "http://snapshots.repository.codehaus.org"
 				//mavenRepo "http://repository.codehaus.org"
-				//mavenRepo "http://download.java.net/maven/2/"
+				mavenRepo "http://download.java.net/maven/2/"
 				//mavenRepo "http://repository.jboss.com/maven2/"
+				mavenRepo 'http://repo.spring.io/milestone'
 			}
 
 			dependencies { // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
@@ -148,6 +155,8 @@ grails.project.dependency.resolution = {
 
 				runtime ":database-migration:1.3.2"
 
+				compile ':spring-security-core:2.0-RC2'
+				compile ":fixtures:1.2"
 				compile ":cache-headers:1.1.5"
 				compile ':cache:1.0.1'
 			}
