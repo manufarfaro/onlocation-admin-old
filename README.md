@@ -23,3 +23,7 @@ A continuación se presentan las guias de instalación y de puesta en marcha del
 ### Desarrollo
 ### Test
 ### Producción
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/manufarfaro/onlocation-admin/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
