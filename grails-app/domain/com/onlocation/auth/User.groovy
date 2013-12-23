@@ -27,11 +27,10 @@ class User {
 		password column: '`password`'
 	}
 
-	Collection<? extends GrantedAuthority> getAuthorities() {
-		//UserRole.findAllByUser(this).collect { it.role }
-		return UserRole.findByUser(this).role
+	Set<Role> getAuthorities() {
+		UserRole.findAllByUser(this).collect { it.role }
 	}
-
+	
 	def beforeInsert() {
 		encodePassword()
 	}
