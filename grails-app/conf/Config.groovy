@@ -189,7 +189,7 @@ grails{
 			
 			/** authenticationProcessingFilter */
 			apf {
-				filterProcessesUrl = '/j_onlocation_security_check'
+				filterProcessesUrl = '/login'
 				//usernameParameter = UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_USERNAME_KEY // 'j_username'
 				//passwordParameter = UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_PASSWORD_KEY // 'j_password'
 				usernameParameter = 'ol-username'
@@ -202,11 +202,11 @@ grails{
 
 			// authenticationFailureHandler
 			failureHandler {
-				defaultFailureUrl = '/admin/login/authfail?login_error=1'
-						ajaxAuthFailUrl = '/admin/login/authfail?ajax=true'
-						exceptionMappings = [:]
-						useForward = false
-						allowSessionCreation = true
+				defaultFailureUrl = '/login/'
+				ajaxAuthFailUrl = '/login/authfail?ajax=true'
+				exceptionMappings = [:]
+				useForward = false
+				allowSessionCreation = true
 			}
 						
 			// successHandler
@@ -332,7 +332,9 @@ grails{
 				    '/**/js/**':                      ['permitAll'],
 				    '/**/css/**':                     ['permitAll'],
 				    '/**/images/**':                  ['permitAll'],
+					'/**/font/**':                    ['permitAll'],
 				    '/**/favicon.ico':                ['permitAll']
+					
 				]
 			}
 			

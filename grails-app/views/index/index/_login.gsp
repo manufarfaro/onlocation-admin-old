@@ -1,11 +1,14 @@
 <!-- Start: Login -->
 
-  <div class="modal fade" id="olm-login" tabindex="-1" role="dialog" aria-labelledby="olm-loginLabel" aria-hidden="true">
+  <%@page import="org.codehaus.groovy.grails.web.mapping.LinkGenerator"%>
+<div class="modal fade" id="olm-login" tabindex="-1" role="dialog" aria-labelledby="olm-loginLabel" aria-hidden="true">
     <div class="modal-dialog">
       <form action="${postUrl}" id="olw-form-login" method="post" role="form" autocomplete="off">
 	      <div class="modal-content">
 	        <div class="modal-header">
-	          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+	          	&times;
+	          </button>
 	          <h4 class="modal-title">
 	          	<g:message code="onlocation.auth.login.title"/>
 	          </h4>
@@ -28,12 +31,18 @@
 					
 				<div class="input-group ">
 				  <input type='checkbox' name='${rememberMeParameter}' id='ol-rememberMe' <g:if test='${hasCookie}'>checked='checked'</g:if>/>
-				  <label for='ol-rememberMe'><g:message code="springSecurity.login.remember.me.label"/></label>
+				  <label for='ol-rememberMe'>
+				  	<g:message code="springSecurity.login.remember.me.label"/>
+				  </label>
 				</div>
 	        </div>
 	        <div class="modal-footer">
-				<button type="button" id="olw-btn-login-close" class="btn btn-default ol-login-actions" data-dismiss="modal">Cerrar</button>
-				<button type="button" id="olw-btn-login-submit" class="btn btn-primary ol-login-actions">Ingres&aacute;</button>
+				<button type="button" id="olw-btn-login-close" class="btn btn-default ol-login-actions" data-dismiss="modal">
+					<g:message code="default.button.close.label"/>
+				</button>
+				<button type="button" id="olw-btn-login-submit" class="btn btn-primary ol-login-actions">
+					<g:message code="springSecurity.login.button"/>
+				</button>
 	        </div>
 	      </div>
       </form>
@@ -85,18 +94,18 @@
   	  	  		showErrorMessage(response.error)
   	  	  	}
   	  	  	if(response.success){
-  	  	  		showSucceddedMessage('Los datos son correctos. En momentos será redirigido a nuestra aplicación.')
+  	  	  		showSucceddedMessage("${message(code:'springSecurity.login.response.success')}")
   	  	  		location.href = '/admin/home'
   	  	  	}
   	  	};
   	  	function onFailure(){
   	  	  	
-  	  		showErrorMessage('Error de conexión. Por favor, contacte al administrador.')
+  	  		showErrorMessage("${message(code:'springSecurity.errors.login.connection')}")
   	  	}
   	  	return {
   	  	  	do: function(){
   	  	  		$('#olw-form-login').ajaxSubmit({
-  	  	  			dataType: 'json',
+  	  	  			//dataType: 'json',
   	  	  			async: false,
   	    	  		success: function(xhr){
   	  	    	  		onSuccess(xhr)

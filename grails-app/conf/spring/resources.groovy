@@ -1,4 +1,4 @@
 beans = {
 	AuthenticationEventListener(com.onlocation.auth.AuthenticationEventListener){}
-	DefaultPreAuthenticationChecks(com.onlocation.auth.DefaultPreAuthenticationChecks){}
+	DefaultPreAuthenticationChecks(grails.plugin.springsecurity.userdetails.DefaultPreAuthenticationChecks){}
 }

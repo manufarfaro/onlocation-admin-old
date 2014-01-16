@@ -43,7 +43,7 @@
 	            <li class="dropdown">
 	              <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 	              	<span class="ol-layout-username">
-	              		Username
+	              		<sec:username/>
 	              		<i class="icon-caret-down icon-light"></i>
 	              	</span> 
 	              </a>
@@ -52,7 +52,12 @@
 	                <li><a href="sidebar.html">Menu Item</a></li>
 	                <li role="presentation" class="divider"></li>
 	                <li role="presentation" class="dropdown-header">Options</li>
-	                <li><a href="sidebar.html"><i class="icon-off"></i> Logoff</a></li>
+	                <li>
+	                	<g:link mapping="logout">
+	                		<i class="icon-off"></i>
+	                		Logout
+	                	</g:link>
+	                </li>
 	              </ul>
 	            </li>
 	          </ul>
