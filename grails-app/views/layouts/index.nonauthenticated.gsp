@@ -72,7 +72,7 @@
 							</a>
 							<ul class="dropdown-menu" style="min-width:193px;">
 				                <li>
-				                	<g:link action="logout">Logout</g:link>
+				                	<a href="/logout">Logout</a>
 				                </li>
 				            </ul>
 						</li>

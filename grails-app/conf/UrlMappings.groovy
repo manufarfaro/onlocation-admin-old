@@ -2,26 +2,20 @@ class UrlMappings {
 
 	static mappings = {
 		name admin: "/admin"(
-			controller:'redirect',
-			action: 'adminHomeIndex',
+			controller:"redirect",
+			action: "adminHomeIndex",
 		)
-		name login: "/login"(
-			controller:'Index',
-			action:'login',
-			namespace:null
+		name home:"/"(
+			controller:"Index",
+			action:"index",
 		)
-		name logout: "/logout"(
-			controller:'Index',
-			action:'logout',
-			namespace:null
+		"500"(
+			view:"/error"
 		)
-		"/$namespace/$controller/$action?/$id?"()
-		name home:'/'(
-			controller:'Index',
-			action:'index',
-			namespace:null
+		"404"(
+			view:"/notFound"
 		)
-		'500'(view:'/error')
-		'404'("Pagina No Encontrada")
+		//"/$namespace/$controller/$action?/$id?"()
+		"/$controller/$action?/$id?"()
 	}
 }

@@ -53,10 +53,10 @@
 	                <li role="presentation" class="divider"></li>
 	                <li role="presentation" class="dropdown-header">Options</li>
 	                <li>
-	                	<g:link mapping="logout">
+	                	<a href="/logout">
 	                		<i class="icon-off"></i>
 	                		Logout
-	                	</g:link>
+	                	</a>
 	                </li>
 	              </ul>
 	            </li>

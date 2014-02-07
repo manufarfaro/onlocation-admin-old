@@ -104,11 +104,8 @@ log4j = {
     appenders {
         console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     }
-
-	trace 'org.hibernate.type'
 		  
-	debug 'org.hibernate.SQL',
-		  'org.springframework.security',
+	debug 'org.springframework.security',
 		  'org.codehaus.groovy.grails.plugins.springsecurity'
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
@@ -189,7 +186,7 @@ grails{
 			
 			/** authenticationProcessingFilter */
 			apf {
-				filterProcessesUrl = '/login'
+				filterProcessesUrl = '/onlocation_security_check'
 				//usernameParameter = UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_USERNAME_KEY // 'j_username'
 				//passwordParameter = UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_PASSWORD_KEY // 'j_password'
 				usernameParameter = 'ol-username'
@@ -202,7 +199,7 @@ grails{
 
 			// authenticationFailureHandler
 			failureHandler {
-				defaultFailureUrl = '/login/'
+				defaultFailureUrl = '/login/authfail'
 				ajaxAuthFailUrl = '/login/authfail?ajax=true'
 				exceptionMappings = [:]
 				useForward = false
@@ -211,10 +208,10 @@ grails{
 						
 			// successHandler
 			successHandler {
-				defaultTargetUrl = '/admin/'
+				defaultTargetUrl = '/home'
 				alwaysUseDefault = false
 				targetUrlParameter = SpringSecurityUtils.DEFAULT_TARGET_PARAMETER // 'spring-security-redirect'
-				ajaxSuccessUrl = '/admin/login/ajaxSuccess'
+				ajaxSuccessUrl = '/login/ajaxSuccess'
 				useReferer = false
 			}
 			
@@ -248,7 +245,7 @@ grails{
 			
 			/** authenticationEntryPoint */
 			auth {
-				loginFormUrl = '/'
+				loginFormUrl = '/login/'
 				forceHttps = false
 				ajaxLoginFormUrl = '/login/authAjax'
 				useForward = false // redirect to login page
@@ -257,14 +254,14 @@ grails{
 			/** logoutFilter */
 			logout {
 				afterLogoutUrl = '/'
-				filterProcessesUrl = '/logout'
+				filterProcessesUrl = '/onlocation_security_logout'
 				handlerNames = [] // 'rememberMeServices', 'securityContextLogoutHandler'
 				clearAuthentication = true
 				invalidateHttpSession = true
 				targetUrlParameter = null
 				alwaysUseDefaultTargetUrl = false
 				redirectToReferer = false
-				postOnly = true
+				postOnly = false
 			}
 			
 			/**
@@ -272,8 +269,8 @@ grails{
 			 * set errorPage to null to send Error 403 instead of showing error page
 			 */
 			adh {
-				errorPage = '/admin/login/denied'
-				ajaxErrorPage = '/admin/login/ajaxDenied'
+				errorPage = '/login/denied'
+				ajaxErrorPage = '/login/ajaxDenied'
 				useForward = true
 			}
 			

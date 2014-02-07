@@ -4,6 +4,7 @@
 <div class="modal fade" id="olm-login" tabindex="-1" role="dialog" aria-labelledby="olm-loginLabel" aria-hidden="true">
     <div class="modal-dialog">
       <form action="${postUrl}" id="olw-form-login" method="post" role="form" autocomplete="off">
+      	  <input type="hidden" name="ajax" value="true" >
 	      <div class="modal-content">
 	        <div class="modal-header">
 	          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
@@ -95,7 +96,7 @@
   	  	  	}
   	  	  	if(response.success){
   	  	  		showSucceddedMessage("${message(code:'springSecurity.login.response.success')}")
-  	  	  		location.href = '/admin/home'
+  	  	  		location.href = '/home'
   	  	  	}
   	  	};
   	  	function onFailure(){
